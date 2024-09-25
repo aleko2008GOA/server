@@ -1,22 +1,33 @@
-const button = document.getElementById('count');
+const form = document.getElementById("form");
 
-button.addEventListener('click', async () =>{
-    try {
+form.addEventListener('submit', async (e) =>{
+    e.preventDefault();
+
+    const user = {
+        name: e.target.name.value,
+        username: e.target.username.value,
+        email: e.target.email.value,
+        age: e.target.age.value,
+        class: e.target.class.value,
+        index: e.target.index.value
+    }
+
+    try{
         const response = await fetch('/click', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({message: 'User clicked!'})
+            body: JSON.stringify(user)
         });
 
         if (response.ok) {
-            alert('Data submitted successfully!');
+            console.log('Form has been sent!')
+            form.reset(); 
         } else {
-            alert('Error submitting data.');
+            console.log('Error, can not reach server');
         }
     } catch (error) {
-        console.error('Error:', error);
-        alert('Error submitting data.');
+        console.error('Error: ', error);
     }
 });
