@@ -8,26 +8,20 @@ form.addEventListener('submit', async (e) =>{
         username: e.target.username.value,
         email: e.target.email.value,
         age: e.target.age.value,
-        class: e.target.class.value,
+        class_year: e.target.class_year.value,
         index: e.target.index.value
     }
 
-    try{
-        const response = await fetch('/click', {
+    try {
+        await fetch('http://localhost:3000/send-email', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user),
         });
-
-        if (response.ok) {
-            console.log('Form has been sent!')
-            form.reset(); 
-        } else {
-            console.log('Error, can not reach server');
-        }
     } catch (error) {
-        console.error('Error: ', error);
+        console.error('Error:', error);
+        alert('Can not send email, please try again');
     }
 });
