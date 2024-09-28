@@ -1,10 +1,14 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
+import path from 'path';
+import cors from 'cors';
+import dotenv from 'dotenv'; 
+
+dotenv.config();
 
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    console.log("no")
     const user = req.body;
 
     try {
@@ -22,11 +26,11 @@ router.post('/', async (req, res) => {
             subject: 'New user',
             text: JSON.stringify(user)
         };
-
+        
         await transporter.sendMail(mailOptions);
         res.status(200).send('Email was sent!');
     } catch (error) {
-        console.error('Error while sending email:', error);
+        console.log('Error while sending email:', error);
         res.status(500).send('Cannot send it');
     }
 });

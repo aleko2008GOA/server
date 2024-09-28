@@ -10,10 +10,10 @@ form.addEventListener('submit', async (e) => {
         age: e.target.age.value,
         class_year: e.target.class_year.value,
         index: e.target.index.value
-    }
+    };
 
     try {
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('/src/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
