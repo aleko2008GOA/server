@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 const router = express.Router();
 
 router.post('/', async (req, res) => {
+    console.log("no")
     const user = req.body;
 
     try {
