@@ -8,10 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('src')); 
+app.use(express.static(path.join(process.cwd(), 'src')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'src', 'index.html'));
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
 app.post('/send-email', async (req, res) => {
