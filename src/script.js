@@ -1,6 +1,6 @@
 const form = document.getElementById("form");
 
-form.addEventListener('submit', async (e) =>{
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const user = {
@@ -11,21 +11,22 @@ form.addEventListener('submit', async (e) =>{
         class_year: e.target.class_year.value,
         index: e.target.index.value
     }
-    console.log('user created')
 
     try {
-        console.log('yes')
-        const response = await fetch('/send-email', {
+        const response = await fetch('/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(user),
         });
-        console.log('yes')
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         alert('Email sent successfully!');
     } catch (error) {
         console.error('Error:', error);
-        alert('Can not send email, please try again');
+        alert('Cannot send email, please try again');
     }
 });
