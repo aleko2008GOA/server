@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 import sendEmail from './api/send-email.js';
 import dotenv from 'dotenv';
 
@@ -19,5 +20,5 @@ app.get('/', (req, res) => {
 app.use('/api/send-email', sendEmail);
 
 app.listen(PORT, () => {
-    console.log(`Server is running at port ${PORT}`);
+    console.log(`Server is runnig at port ${PORT}`);
 });

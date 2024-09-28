@@ -1,7 +1,5 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
-import path from 'path';
-import cors from 'cors';
 import dotenv from 'dotenv'; 
 
 dotenv.config();
@@ -24,7 +22,7 @@ router.post('/', async (req, res) => {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             subject: 'New user',
-            text: JSON.stringify(user)
+            text: JSON.stringify(user, null, 2)
         };
         
         await transporter.sendMail(mailOptions);
