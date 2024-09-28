@@ -3,7 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+    </style>
     <title>Регистрация пользователя</title>
 </head>
 <body>
@@ -17,6 +46,40 @@
         <input type="text" name="index" placeholder="Номер зачетной книжки" required>
         <button type="submit">Отправить</button>
     </form>
-    <script src="script.js"></script>
+    <script>
+        const form = document.getElementById("form");
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const user = {
+        name: e.target.name.value,
+        username: e.target.username.value,
+        email: e.target.email.value,
+        age: e.target.age.value,
+        class_year: e.target.class_year.value,
+        index: e.target.index.value
+    };
+
+    try {
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+
+        if (!response.ok) {
+            const errorMessage = await response.text();
+            throw new Error(`Ошибка: ${errorMessage}`);
+        }
+        alert('Письмо успешно отправлено!');
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Не удалось отправить письмо, попробуйте еще раз');
+    }
+});
+    </script>
 </body>
 </html>
