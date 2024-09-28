@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static('src'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'src', 'index.html'));
+    res.sendFile(path.join(process.cwd(), 'index.html'));
 });
 
 app.use('/api/send-email', sendEmail);
