@@ -11,8 +11,10 @@ form.addEventListener('submit', async (e) =>{
         class_year: e.target.class_year.value,
         index: e.target.index.value
     }
+    console.log('user created')
 
     try {
+        console.log('yes')
         const response = await fetch('/send-email', {
             method: 'POST',
             headers: {
@@ -20,9 +22,7 @@ form.addEventListener('submit', async (e) =>{
             },
             body: JSON.stringify(user),
         });
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+        console.log('yes')
         alert('Email sent successfully!');
     } catch (error) {
         console.error('Error:', error);
