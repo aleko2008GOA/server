@@ -22,11 +22,12 @@ form.addEventListener('submit', async (e) => {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            const errorMessage = await response.text();
+            throw new Error(`Ошибка: ${errorMessage}`);
         }
-        alert('Email sent successfully!');
+        alert('Письмо успешно отправлено!');
     } catch (error) {
-        console.error('Error:', error);
-        alert('Cannot send email, please try again');
+        console.error('Ошибка:', error);
+        alert('Не удалось отправить письмо, попробуйте еще раз');
     }
 });

@@ -9,6 +9,10 @@ const router = express.Router();
 router.post('/', async (req, res) => {
     const user = req.body;
 
+    if (!user.name || !user.email) {
+        return res.status(400).send('Недостаточно данных для отправки письма.');
+    }
+
     try {
         let transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -21,15 +25,15 @@ router.post('/', async (req, res) => {
         let mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            subject: 'New user',
+            subject: 'Новый пользователь',
             text: JSON.stringify(user, null, 2)
         };
         
         await transporter.sendMail(mailOptions);
-        res.status(200).send('Email was sent!');
+        res.status(200).send('Письмо было отправлено!');
     } catch (error) {
-        console.log('Error while sending email:', error);
-        res.status(500).send('Cannot send it');
+        console.error('Ошибка при отправке письма:', error);
+        res.status(500).send('Не удалось отправить письмо');
     }
 });
 

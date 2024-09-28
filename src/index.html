@@ -1,119 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel = 'stylesheet' href = 'style.css'>
-    <title>programing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@200..800&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="images/ImagesLogo-removebg-preview.png" class="imageLogo">
-    <script src="https://kit.fontawesome.com/0233cf5934.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Регистрация пользователя</title>
 </head>
 <body>
-    <form id = "form">
-        <h1>Welcome young knight!</h1>
-        <div class="divSection1"> 
-            <div class="divforsection1">
-                <section class="s-1">
-                    <label for = 'name' class="label1">name</label>
-                    <input type = 'text' name = 'name' id = 'name' required>
-                </section>
-                <section class="s-1">
-                    <label for = 'username' class="label2">username</label>
-                    <input type = 'text' name = 'username' id = 'username' required>
-                </section>
-            </div>
-            <div class="divforsection1">
-                <section class="s-1">
-                    <label for = 'email' class="label3">email</label>
-                    <input type = 'email' name = 'email' id = 'email' required>
-                </section>
-                <section class="s-1">
-                    <label for = 'age' class="label4">age</label>
-                    <input type = 'number' name = 'age' id = 'age' required>
-                </section>
-            </div>
-        </div>
-        <div class="divnumba">
-            <section class="s-2">
-                <label for = 'class_year '  class="labelklass">class</label>
-                <section class="s--2">
-                    <div class="divsection2">
-                        <div class="div7cl">
-                            <input type="radio" name="class_year" id="seven" value="7" required>
-                            <label for="seven">7</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="class_year" id="eight" value="8" required>
-                            <label for="eight">8</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="class_year" id="nine" value="9" required>
-                            <label for="nine">9</label>
-                        </div>
-                    </div>
-                    <div class="divsection2">
-                        <div class="div7cl"> 
-                            <input type="radio" name="class_year" id="ten" value="10" required>
-                            <label for="ten">10</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="class_year" id="eleven" value="11" required>
-                            <label for="eleven">11</label>
-                        </div>
-                        
-                        <div class="div7cl">
-                            <input type="radio" name="class_year" id="twelve" value="12" required>
-                            <label for="twelve">12</label>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <section class="s-2">
-                <label for = 'index'  class="labelklass">index</label>
-                <section class="s--2 ">
-                    <div class="divsection2">     
-                        <div class="div7cl">
-                            <input type="radio" name="index" id="one" value="1" required>
-                            <label for="one">1</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="index" id="two" value="2" required>
-                            <label for="two">2</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="index" id="three" value="3" required>
-                            <label for="three">3</label>
-                        </div>
-                    </div>
-                    <div class="divsection2">
-                        <div class="div7cl">
-                            <input type="radio" name="index" id="four" value="4" required>
-                            <label for="four">4</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="index" id="five" value="5" required>
-                            <label for="five">5</label>
-                        </div>
-                        <div class="div7cl">
-                            <input type="radio" name="index" id="six" value="6" required>
-                            <label for="six">6</label>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </div>
-
-        <label for = 'terms' class="label5">Oh brave coding knight, can we trust you with your destiny? Are we worthy to guide you in your quest for programming glory? May the algorithms be ever in your favor and your bugs easily vanquished!</label>
-
-        <section class="lastsection">
-            <input type = 'submit' value = 'I am in!'>
-            <input type = 'reset' value = 'I wanna miss my chance'>
-        </section>
+    <h1>Регистрация пользователя</h1>
+    <form id="form">
+        <input type="text" name="name" placeholder="Имя" required>
+        <input type="text" name="username" placeholder="Имя пользователя" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="age" placeholder="Возраст" required>
+        <input type="text" name="class_year" placeholder="Год выпуска" required>
+        <input type="text" name="index" placeholder="Номер зачетной книжки" required>
+        <button type="submit">Отправить</button>
     </form>
-    <script src = './script.js' type = 'module'></script>
+    <script src="script.js"></script>
 </body>
 </html>

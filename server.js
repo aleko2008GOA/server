@@ -20,5 +20,5 @@ app.get('/', (req, res) => {
 app.use('/api/send-email', sendEmail);
 
 app.listen(PORT, () => {
-    console.log(`Server is runnig at port ${PORT}`);
+    console.log(`Сервер работает на порту ${PORT}`);
 });
