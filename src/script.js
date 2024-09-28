@@ -13,13 +13,17 @@ form.addEventListener('submit', async (e) =>{
     }
 
     try {
-        await fetch('http://localhost:3000/send-email', {
+        const response = await fetch('/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(user),
         });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        alert('Email sent successfully!');
     } catch (error) {
         console.error('Error:', error);
         alert('Can not send email, please try again');
