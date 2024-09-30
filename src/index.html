@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "style.css">
-    <title>Регистрация пользователя</title>
+    <title>Programming vekua 42</title>
 </head>
 <body>
-    <h1>Регистрация пользователя</h1>
-    <form id="form">
-        <input type="text" name="name" placeholder="Имя" required>
-        <input type="text" name="username" placeholder="Имя пользователя" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="number" name="age" placeholder="Возраст" required>
-        <input type="text" name="class_year" placeholder="Год выпуска" required>
-        <input type="text" name="index" placeholder="Номер зачетной книжки" required>
-        <button type="submit">Отправить</button>
-    </form>
+    <div id = 'loading_screen'>
+        <p style = 'font-size:20px; margin:3px'>Loading...</p>
+        <div id = "box_percent">
+            <div id = 'green_percent'></div>
+        </div>
+    </div>
+    <div id = 'error'>
+        <h3>Oops!</h3>
+        <p>An unknown error acursed while sending a form. Try <button id = "again">again</button> or contact us: 
+            <a href = "#">Inadze</a>
+            <a href = "#">Alex</a>
+            <a href = "#">Nanoba</a>
+        </p>
+    </div>
+    <div id = 'sent'>
+        <h3>An email was sent!</h3>
+        <p>Welcome! We sent your info to our email! We will contact you soon. Here is a discord server link: 
+            <a href = "#">Link</a>
+        </p>
+    </div>
+    <div id = 'form_cont'>
+        <h1>Welcome a young knight!</h1>
+        <form id="form">
+            <input type="text" name="name" placeholder="First Name, Last Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="class_year" placeholder="Class" required>
+            <input type="text" name="index" placeholder="Index" required>
+            <input type="submit" value = "I am in!"><input type="reset" value = "Not strong enough">
+        </form>
+    </div>
     <script src = "script.js"></script>
 </body>
 </html>
