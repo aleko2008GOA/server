@@ -13,6 +13,7 @@
             <div id = 'green_percent'></div>
         </div>
     </div>
+    
     <div id = 'error'>
         <h3>Oops!</h3>
         <p>An unknown error acursed while sending a form. Try <button id = "again">again</button> or contact us: 
@@ -21,22 +22,63 @@
             <a href = "#">Nanoba</a>
         </p>
     </div>
+
     <div id = 'sent'>
         <h3>An email was sent!</h3>
         <p>Welcome! We sent your info to our email! We will contact you soon. Here is a discord server link: 
             <a href = "#">Link</a>
         </p>
     </div>
+
     <div id = 'form_cont'>
-        <h1>Welcome a young knight!</h1>
         <form id="form">
-            <input type="text" name="name" placeholder="First Name, Last Name" required>
+            <h1>Welcome a young knight!</h1>
+            <span>
+                <input type="text" name="fname" placeholder="First" required>
+                <input type="text" name="lname" placeholder="Last" required>
+            </span>
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="number" name="age" placeholder="Age" required>
-            <input type="text" name="class_year" placeholder="Class" required>
-            <input type="text" name="index" placeholder="Index" required>
-            <input type="submit" value = "I am in!"><input type="reset" value = "Not strong enough">
+            <span>
+                <section>Class:</section>
+                <section>
+                    <input type="radio" name="class_year" value="7" required><label>7</label>
+                    <input type="radio" name="class_year" value="8" required><label>8</label>
+                    <input type="radio" name="class_year" value="9" required><label>9</label>
+                    <input type="radio" name="class_year" value="10" required><label>10</label>
+                    <input type="radio" name="class_year" value="11" required><label>11</label>
+                    <input type="radio" name="class_year" value="12" required><label>12</label>
+                </section>
+            </span>
+            <span>
+                <section>Index:</section>
+                <section>
+                    <input type="radio" name="index" value="1" required><label>1</label>
+                    <input type="radio" name="index" value="2" required><label>2</label>
+                    <input type="radio" name="index" value="3" required><label>3</label>
+                    <input type="radio" name="index" value="4" required><label>4</label>
+                    <input type="radio" name="index" value="5" required><label>5</label>
+                    <input type="radio" name="index" value="6" required><label>6</label>
+                </section>
+            </span>
+            <span>
+                <p>What is your level of programming?</p>
+                <select class="custom-select" name="level" required>
+                    <option value="newbie">Newbie</option>
+                    <option value="begginer">Begginer</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced" disabled>You do not need to submit if you are advanced</option>
+                </select>
+            </span>
+            <span style = "justify-content: normal;">
+                <input type="checkbox" requried>
+                <label>Are you sure that you want...</label>
+            </span>
+            <span>
+                <input type="submit" value = "I am in!">
+                <input type="reset" value = "Not strong enough">
+            </span>
         </form>
     </div>
     <script src = "script.js"></script>

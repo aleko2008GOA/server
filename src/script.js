@@ -5,7 +5,7 @@ const loading_screen = document.getElementById('loading_screen');
 
 window.onload = () =>{
     setTimeout(() =>{
-        form_cont.style.display = 'block';
+        form_cont.style.display = 'flex';
         loading_screen.style.display = 'none';
 
         const form = document.getElementById("form");
@@ -17,12 +17,14 @@ window.onload = () =>{
             loading_screen.style.display = 'flex';
 
             const user = {
-                name: e.target.name.value,
+                fname: e.target.fname.value,
+                lname: e.target.lname.value,
                 username: e.target.username.value,
                 email: e.target.email.value,
                 age: e.target.age.value,
                 class_year: e.target.class_year.value,
-                index: e.target.index.value
+                index: e.target.index.value,
+                level: e.target.level.value
             };
 
             try {
@@ -51,7 +53,7 @@ window.onload = () =>{
 
         document.getElementById("again").addEventListener("click", () =>{
             setTimeout(() =>{
-                form_cont.style.display = 'block';
+                form_cont.style.display = 'flex';
                 loading_screen.style.display = 'flex';
             }, 1000);
         });
