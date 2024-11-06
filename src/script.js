@@ -7,6 +7,8 @@ window.onload = () =>{
     setTimeout(() =>{
         form_cont.style.display = 'flex';
         loading_screen.style.display = 'none';
+        error_screen.style.display = 'none';
+        sent_screen.style.display = 'none';
 
         const form = document.getElementById("form");
 
